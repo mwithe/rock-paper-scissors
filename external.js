@@ -1,4 +1,4 @@
-const playerChoice = 'Rock';
+let playerChoice = prompt('Enter Rock, Paper, or Scissors');
 let computerChoice = getComputerChoice();
 
 playRound(playerChoice, computerChoice);
