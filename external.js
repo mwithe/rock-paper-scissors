@@ -24,13 +24,31 @@ function getComputerChoice() {
 function playRound(playerSelection, computerSelection) {
     console.log('Player Selection: ', playerSelection)
     console.log('Computer Selection: ', computerSelection)
-    return (playerSelection == 'Scissors' && computerSelection == 'Paper') ? console.log('win!')
-        : (playerSelection == 'Scissors' && computerSelection == 'Rock') ? console.log('lose!')
-            : (playerSelection == 'Paper' && computerSelection == 'Rock') ? console.log('win!')
-                : (playerSelection == 'Paper' && computerSelection == 'Scissors') ? console.log('lose!')
-                    : (playerSelection == 'Rock' && computerSelection == 'Scissors') ? console.log('win!')
-                        : (playerSelection == 'Rock' && computerSelection == 'Paper') ? console.log('lose!')
-                            : console.log('draw!');
+
+    let playerPoint = 0;
+    let computerPoint = 0;
+
+    if ((playerSelection == 'Scissors' && computerSelection == 'Paper') ||
+        (playerSelection == 'Paper' && computerSelection == 'Rock') ||
+        (playerSelection == 'Rock' && computerSelection == 'Scissors')) {
+
+        console.log('player wins round!');
+        playerPoint = 1;
+        return playerPoint;
+    }
+
+    else if ((playerSelection == 'Scissors' && computerSelection == 'Rock') ||
+        (playerSelection == 'Paper' && computerSelection == 'Scissors') ||
+        (playerSelection == 'Rock' && computerSelection == 'Paper')) {
+
+        console.log('computer wins round!');
+        computerPoint = 1;
+        return computerPoint;
+    }
+
+    else {
+        console.log('draw!');
+    }
 }
 
 
